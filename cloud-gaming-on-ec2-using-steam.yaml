@@ -61,13 +61,14 @@ Parameters:
     Description: Instance type (https://aws.amazon.com/ec2/instance-types/g5/)
     Type: String
     AllowedValues:
-      - g5.xlarge
-      - g5.2xlarge
-      - g5.4xlarge
-      - g5.8xlarge
-      - g5.16xlarge
-    ConstraintDescription: Specify a valid EC2 instance type (g5.*)
-    Default: g5.2xlarge
+      - g4dn.xlarge
+      - g4dn.2xlarge
+      - g4dn.4xlarge
+      - g6.xlarge
+      - g6.2xlarge
+      - g6.4xlarge
+    ConstraintDescription: Specify a valid EC2 instance type (g4dn.* or g6.*)
+    Default: g6.xlarge
 
   vpcID:
     Type: AWS::EC2::VPC::Id
@@ -106,7 +107,7 @@ Parameters:
     Description: Volume size in GiB
     MinValue: 30
     MaxValue: 16384
-    Default: 550
+    Default: 128
   volumeType:
     Type: String
     Description: EBS volume type
